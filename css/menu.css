@@ -1,0 +1,95 @@
+
+.menu-secundario{
+    background: rgb(14, 21, 90);
+    padding: 10px;
+    height: 70px;
+    position: relative;
+    
+}
+main{
+    height: 100vh;
+}
+.menu-secundario .enlaces-categorias{
+    text-align: end;
+    padding: 15px;
+}
+.menu-secundario .logo img{
+    width:70px;
+    height:50px;
+    position: absolute;
+    left: 10px;
+}
+.menu-secundario .usuario{
+    width: 20%;
+    position: absolute;
+    top: 50px;
+    z-index: 1000;
+    height: 10px;
+    padding: 15px 0;
+    width: 90px;
+    right: 0;
+    display: none;
+
+}
+.menu-secundario a, 
+.enlaces-categorias i{
+    color: #fff;
+    font-size: 20px;
+    padding: 5px 4px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+.menu-secundario a:hover,
+.menu-secundario i:hover{
+    padding: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+
+@media screen and (max-width: 800px){
+    .contenedor{
+        width: 100%;
+    }
+    .contendor-menu-secuandario{
+        background: rgb(14, 21, 90);
+        padding: 10px;
+        height: 70px;
+        position: relative;
+    }
+    .menu-secundario .logo{
+        position: static;
+        width: 100px;
+        height: 90px;
+        margin-bottom: 10px;
+    }
+    .menu-secundario{ /*estilos enlaces principales*/
+        padding: 20px;
+        align-items: flex-start; /*pone los elementos a la izquierda*/
+        justify-content: flex-start; /*pone los elementos arriba*/
+        position: fixed;/*posiciona a la izquierda*/
+        left: 0;
+        background: rgb(14, 21, 90);
+        height: 100vh; /*abarca todo el alto de la ventana*/
+        width: 50%;
+        z-index: 2000;
+        transition: .3s ease all;
+        transform: translate(-100%);/*sacar de pantalla*/
+    }
+    .menu-secundario .enlaces-categorias .usuario.activo{
+        display: inline;
+        top: 90px;
+    }
+    .menu-secundario .enlaces-categorias i,a{
+        display: block;
+        text-align: left;
+        padding: 20px 10px;
+        left: 10px;
+        font-size: 20px;
+    }
+    .menu-secundario.activo{ /*muestra en pantalla*/
+        transform: translate(10%);
+    }
+}

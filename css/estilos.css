@@ -1,0 +1,514 @@
+html{
+    min-height: 100%;
+    position: relative;
+}
+*{ /*formato genereal*/
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{ /*formato general del cuerpo*/
+    background: #eaedee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.contenedor{ /*formato general del contenedor*/
+    margin: auto;
+    width: 90%;
+    max-width: 90%; /*ancho máximo del contenedor*/
+}
+
+main{ /*formato general del contenido principal*/
+    background: #fff;
+    height: 100%;
+}
+
+/*----------------------botones--------------------------*/
+.menu{
+    background: rgb(14, 21, 90);
+    padding: 5px;
+    margin-bottom: 20px; /*espacio entre la cabecera y el contenido*/
+}
+
+.menu .botones-men{ /*botones responsive*/
+    display: none;
+    justify-content: space-between; /*coloca un espacio entre los elementos del bloque*/
+}
+
+.boton-barras{ /*estilos botones responsive*/
+    font-size: 20px;
+    color: darkgray;
+    padding: 10px 20px;
+    border: 1px solid transparent;/*coloca un borde pero no lo muestra*/
+    display: inline-block;
+    cursor: pointer;
+    background: none;
+    display: none;
+}
+
+.menu .botones-men button:hover{ /*accion del mouse a los botones*/
+    border: 1px solid rgba(255, 255, 255, 0.4); /*coloca color al borde cuando el cursor pasa*/
+}
+
+.menu .botones-men .boton-cerrar{/*no muestra en pantalla el botón*/
+    display: none;
+}
+
+.menu .botones-men .boton-cerrar.activo,
+.menu .botones-men .boton-barras{ /*muestra el botón cuando tiene la clase activo*/
+    display: inline-block;
+}
+.menu .enlaces-categorias .logo{
+    position: absolute;
+    left: 5px;
+}
+.menu .enlaces-categorias{ /*estilos enlaces principales*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu .categorias{ /*estilos enlace principal*/
+    color: #fff;
+    padding: 7px;
+    border-radius: 3px; /*redondea el borde*/
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid transparent;
+    font-size: 12px;
+    cursor: default;
+}
+
+.menu .categorias i{ /*estilos icono enlace principal*/
+    margin-left: 10px;
+    position: relative; /*cambia su posición solo en derecha o izquierda*/
+    bottom: 10px;
+}
+
+.menu .categorias:hover{ 
+    border: 1px solid rgba(255,255,255,.4);
+}
+
+.menu .categorias span{ /*estilo palabra entre span*/
+    display: block;
+    font-size: 14px;
+    font-weight: bold; /*coloca negrilla a las letras*/
+}
+
+.menu .enlaces a,
+.menu .enlaces i{ /*estilo enlaces secuandarios (a la izquierda de la página)*/
+    color: #fff;
+    padding: 0 4px;
+    border: 1px solid transparent;
+    position: relative;
+    right: 24px;
+    cursor: pointer;
+}
+
+.menu .enlaces a:hover,
+.menu .enlaces i:hover{
+    padding: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.menu .usuario{
+    width: 20%;
+    position: absolute;
+    top: 40px;
+    z-index: 1000;
+    height: 10px;
+    padding: 15px 0;
+    width: 90px;
+    display: none;
+
+}
+li{
+    list-style: none;
+}
+.usuario a{
+    background: rgb(14, 21, 90);
+    text-decoration: none;
+    padding: 10px 10px;
+    display: block;
+}
+
+
+.usuario.activo{ /*muestra los submenús cuando el mouse pasa por ahí*/
+    display: block;
+}
+
+/*---------------------------grid(categorias y subcategorias)---------------------------*/
+
+.contenedor-grid{
+    position: relative;
+}
+
+.grid{ /*estilos de la grid (columnas, filas y superposición)*/
+    width: 100%;
+    position: absolute; /*lo saca de la cabecera, no tiene en cuenta su posición en html*/
+    top: 5px; /*acomodarlo (empujar de arriba hacia abajo*/
+    z-index: 1000; /*ordena los elementos que se superponen entre si*/
+    display: none;
+    min-height: 30px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "categorias subcategorias subcategorias2";
+}
+
+
+.grid.activo{
+    display: grid;
+}
+
+.grid > div{ /*estilos div directos desde grid*/
+    background: #fff;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.10);
+}
+
+.grid .boton-regresar{ /*estilos botón de regresar*/
+    background: rgb(14, 21, 90);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+}
+
+
+/*---------------------------Categorías-----------------------------*/
+
+.grid .categorias-grid{ /*estilos categorias*/
+    grid-area: categorias;
+    padding-top: 10px;
+    min-height: 300px;
+}
+
+.grid .categorias-grid .subtitulo{ /*estilos subtitulo de las categorias*/
+    display: none;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 10px 5px;
+    color: coral;
+    left: 0;
+}
+
+.grid .categorias-grid a{ /*estilos enlaces de las categorias*/
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.grid .categorias-grid a i{ /*visibilidad del ícono*/
+    display: none;
+}
+
+.grid .categorias-grid a:hover{ /*cursor en los enlaces*/
+    color: coral;
+    font-weight: bold;
+}
+
+.grid .categorias-grid a:hover i{ /*cursor en el ícono*/
+    display: inline-block;
+}
+
+/*--------------------------Subcategorías-----------------------------*/
+
+.grid .subcategorias-grid { /*estilos subcategorias*/
+    grid-area: subcategorias;
+    padding-top: 10px;
+    min-height: 300px;
+    overflow: auto; /*saca una barra de navegación si es mayor al alto*/
+}
+
+.grid .subcategorias-grid .subcategoria{
+    display: none;
+}
+
+.grid .subcategorias-grid a{ /*estilos enlaces subcategorias*/
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.grid .subtitulo{ /*estilos subtitulo subcategoria*/
+    font-size: 18px;
+    font-weight: normal;
+    padding: 10px 5px;
+    color: coral;
+    left: 0;
+}
+
+.grid .subcategorias-grid a i{
+    display: none;
+}
+
+.grid .subcategorias-grid a:hover{ /*cursor estilos enlaces*/
+    color: coral;
+    font-weight: bold;
+}
+
+.grid .subcategorias-grid a:hover i{ /*cursor visibilidad ícono*/
+    display: inline-block;
+}
+
+.grid .subcategorias-grid .subcategoria.activo{
+    display: grid;
+}
+
+/*------------------Subcategorias 2---------------------*/
+
+.grid .subcategorias2-grid { /*estilos subcategoria 2*/
+    grid-area: subcategorias2;
+    padding-top: 10px;
+    min-height: 300px;
+    overflow: auto; /*saca una barra de navegación si es mayor al alto*/
+}
+
+.grid .subcategorias2-grid .subcategoria2{ 
+    display: none;
+}
+.grid .subtitulo{ /*estilos subtitulo de la subcategoria 2*/
+    font-size: 18px;
+    font-weight: normal;
+    padding: 10px 20px;
+    color: coral;
+}
+
+.grid .subcategorias2-grid a{ /*estilos enlaces subcategoria 2*/
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.grid .subcategorias2-grid a i{ 
+    display: none;
+}
+
+.grid .subcategorias2-grid a:hover{ /*cursor estilos enlaces*/
+    color: coral;
+    font-weight: bold;
+}
+
+.grid .subcategorias2-grid a:hover i{ /*cursor visibilidad ícono*/
+    display: inline-block;
+}
+
+.grid .subcategorias2-grid .subcategoria2.activo{
+    display: grid;
+}
+
+/*----------------------------------------Buscador de contenido--------------------------*/
+
+#contenedor-icono-buscar{
+    position: absolute;
+    right: 60px;
+    top: 20px;
+}
+ #contenedor-icono-buscar i{
+     display: block;
+     font-size: 18px;
+     color: #fff;
+     cursor: pointer;
+     transition: all 300ms;
+     border: 1px solid transparent;
+     border-radius: 5px;
+ }
+
+ #contenedor-icono-buscar i:hover{
+     border: 1px solid rgba(255,255,255,.4);
+     padding: 7px;
+ }
+
+ .barra-busqueda{
+     top: -90px;
+     position: fixed;
+     width: 100%;
+     background: ghostwhite;
+     padding: 20px;
+     z-index: 30;
+     transition: all 600ms;
+ }
+
+ .barra-busqueda input{
+     display: block;
+     width: 80%;
+     margin: auto;
+     padding: 10px;
+     font-size: 18px;
+     outline: 0;
+ }
+
+ #cover-search{
+     display: none;
+     width: 100%;
+     height: 100%;
+     position: fixed;
+     left: 0;
+     background: rgba(0, 0, 0, 0.4);
+     z-index: 20;
+ }
+
+/*------------------mediaqueries---------------------*/
+/*---------------tamaños de la pantalla (responsive)------------------*/
+
+@media screen and (max-width: 1000px){ /*estilos en patanlla en mínimo 800px y máximo 1.000px*/
+    .menu .enlaces-categorias{
+        padding: 0 10px;
+    }
+    .menu .contenedor{
+        width: 100%;
+    }
+    .menu .enlaces-categorias .logo{
+        left: 130px;
+    }
+}
+
+@media screen and (max-width: 800px){ /*estilos en patalla de máximo 800px(móviles)*/
+    .contenedor{
+        width: 100%;
+    }
+    .menu {
+        background: rgb(14, 21, 90);
+        height: 70px;
+        position: relative;
+    }
+    .menu .botones-men{
+        display: flex;
+    }
+    .menu .enlaces-categorias .logo{
+        position: static;
+        width: 100px;
+        height: 90px;
+        margin-bottom: 10px;
+    }
+    .menu .enlaces-categorias{ /*estilos enlaces principales*/
+        padding: 20px;
+        flex-direction: column;/*transforma de fila a columna los menús*/
+        align-items: flex-start; /*pone los elementos a la izquierda*/
+        justify-content: flex-start; /*pone los elementos arriba*/
+        position: fixed;/*posiciona a la izquierda*/
+        left: 0;
+        background: rgb(14, 21, 90);
+        height: 100vh; /*abarca todo el alto de la ventana*/
+        width: 70%;
+        z-index: 2000;
+        transition: .3s ease all;
+        transform: translate(-100%);/*sacar de pantalla*/
+    }
+    .menu .enlaces-categorias.activo{ /*muestra en pantalla*/
+        transform: translate(0%);
+    }
+    .menu .enlaces-categorias i,a{
+        left: 10px;
+        font-size: 20px;
+        padding: 10px;
+    }
+    .menu .enlaces-categorias .usuario.activo{
+        display: inline;
+        top: 90px;
+    }
+    .menu .categorias{ /*estilos menú principal*/
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .menu .categorias i{ /*estilo icono menú principal*/
+        position: static;
+        margin-left: 20px;
+        transform: rotate(-90deg);/*rotar la flecha*/
+    }
+    .menu .enlaces{
+        width: 100%;
+    }
+    .menu .enlaces a{ /*estilos enlaces menpu principal*/
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+    }
+    .grid { /*estilos categorias*/
+        display: none;
+        transition: .3s ease all;
+        z-index: 3000; /*para que quede encima del menú pricipal*/
+        width: 70%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;/*alto de toda la pantalla*/
+        grid-template-areas: "categorias categorias categorias";
+
+    }
+    .grid.activo{
+        display: grid;
+    }
+    .grid .boton-regresar{ /*estilo botón regresar*/
+        display: inline-block;
+    }
+    .grid .categorias-grid .subtitulo{ /*estilo subtitulo de categorías*/
+        display: block;
+    }
+    .grid .subcategorias-grid .boton-regresar{ /*estilo botón regresar de subcategorias*/
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .grid .subcategorias-grid{ /*estilos subcategorias*/
+        display: grid;
+        transition: .3s ease all;
+        z-index: 4000; /*para que quede encima del menú de categorias*/
+        width: 70%;
+        position: fixed;
+        left: 0;
+        height: 100vh;
+        grid-template-areas: "subcategorias subcategorias subcategorias";
+        overflow: auto;
+        transform: translate(-100%);
+    }
+    .grid .subcategorias-grid .subtitulo{ /*estilos subtitulos subcategorias*/
+        margin-top: 60px;
+        display: block;
+    }
+    .grid .subcategorias-grid.activo{ 
+        transform: translate(0%);
+    }
+    .grid .subcategorias2-grid{ /*estilos subcategorias 2*/
+        display: grid;
+        transition: .3s ease all;
+        z-index: 5000; /*para que quede encima del menú de categorias*/
+        width: 70%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        grid-template-areas: "subcategorias2 subcategorias2 subcategorias2";
+        overflow: auto;
+        transform: translate(-100%);
+    }
+    .grid .subcategorias2-grid .boton-regresar{ /*estilos botón regresar de subcategorias 2*/
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .grid .subcategorias2-grid .subtitulo{ /*estilos subtitulo de subcategoria 2*/
+        margin-top: 70px;
+        display: block;
+    }
+    .grid .subcategorias2-grid.activo{
+        transform: translate(0%);
+    }
+    
+}

@@ -1,0 +1,57 @@
+html{
+    min-height: 100%;
+    position: relative;
+}
+.contenedor{
+    height: 100vh;
+}
+main{
+    height: 100vh;
+}
+.contenedor-login {
+    margin: 0 auto;
+    text-align: center;
+}
+.login{
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 30px;
+    background: cornflowerblue;
+    width: 60%;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.login label,
+.login .text{
+    display: block;
+}
+.text{
+    width: 60%;
+    border-radius: 5px;
+    margin-left: 20%;
+    padding: 5px;
+    font-size: 20px;
+}
+.login label{
+    padding: 10px;
+}
+.errorLogin{
+    color: crimson;
+    padding: 10px;
+    font-size: 20px;
+}
+.login .boton{
+    padding: 20px;
+}
+.login .ingresar{
+    padding: 10px;
+    font-size: large;
+    border-radius: 10px;
+}
+.login .ingresar:hover{
+    transition: ease all .3s;
+    background: crimson;
+    padding: 12px;
+}

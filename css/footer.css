@@ -1,0 +1,54 @@
+/*-----------------------------------------------Pie de página------------------------------------------*/
+
+.informacion{
+    background:rgb(0, 0, 0);
+    height: 170px;
+    width: 90%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    overflow: auto;
+}
+.informacion h3{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: seashell;
+    padding: 10px 20px;
+}
+.informacion h2{
+    font-size: 12px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: seashell;
+    padding: 5px 20px;
+}
+.informacion a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.informacion a:hover{
+    text-decoration: underline #fff;
+}
+.informacion .redes{
+    text-align: center;
+}
+.informacion .redes img{
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .informacion{
+        height: 200px;
+        width: 100%;
+    }
+    .informacion .corporativo{
+        text-align: center;
+    }
+    .informacion .redes{
+        right: 0;
+        top: 90px;
+        padding-left: 20px;
+        text-align: center;
+    }
+    
+}

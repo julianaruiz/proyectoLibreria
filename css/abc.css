@@ -1,0 +1,70 @@
+/*------------------Contenido de las paginas---------------------*/
+.contener {
+    background-color: antiquewhite;
+    margin: 0 auto;
+    
+}
+
+
+.libros {
+    background-color: white;
+
+    padding: 7px;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid transparent;
+    font-size: 12px;
+    cursor: default;
+}
+
+.libros li {
+    list-style:none;
+    text-decoration: none;
+    padding:0.8rem 0.3rem;
+    
+}
+
+.libros li a {
+    text-align: center;
+    color: black;
+}
+
+.libros li a p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    height: 1.4rem;
+}
+
+
+/*------------------busqueda por letras---------------------*/
+
+.lista{
+    background-color: rgb(14, 21, 90);
+    border-radius: 1rem;
+    color: black;
+    padding: 7px;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid transparent;
+    font-size: 12px;
+    cursor: default;
+}
+
+.lista li {
+    margin: 0 auto;
+    list-style:none;
+}
+.lista li a{ 
+    color: white;
+    list-style:none;
+    text-decoration: none;
+    padding:0.8rem 0.3rem;
+    display:block;
+    width: 2.9rem;
+}
+
+.lista li a:hover {
+    background-color:rgba(26, 30, 68,0.6);
+}
+
+

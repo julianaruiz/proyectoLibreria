@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/cuenta-general.css">
+    <link rel="stylesheet" href="css/cambio_clave.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <main>
+
+            <nav class="contendor-menu-secuandario">
+                <button id="boton-barras" class="boton-barras"><i class="fas fa-bars"></i></button>
+                <div class="menu-secundario">
+
+                    <div class="logo">
+                        <img src="imagenes/book2.png">
+                    </div>
+                    <div class=" enlaces-categorias">
+                        <a href="index.html">Inicio</a>
+                        <a href="registro.php">Registro</a>
+                        <a href="#">Carrito de compra</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="contenedor-perfil">
+                <div class="menu-perfil">
+                    <a href="cuenta.html" class="btn-perfil">Vista general</a>
+                    <a href="cambio_clave.html" class="btn-perfil">Cambio de contraseña</a>
+                </div>
+                <div class="contenedor-cambio-clave">
+                    <form action="" method="POST" class="cambio-clave">
+                        <h1>CAMBIO DE CONTRASEÑA</h1>
+                        <label for="clave_vieja" class="label">Ingrese su contraseña</label>
+                        <input type="text" class="texto" name="clave_vieja" required autofocus>
+                        <label for="clave_nueva" class="label">Ingrese la nueva contraseña</label>
+                        <input type="text" class="texto" name="clave_nueva" required>
+                        <label for="clave_nueva_rep" class="label">Repita la nueva contraseña</label>
+                        <input type="text" class="texto" name="clave_nueva_rep" required>
+                        <div class="botones">
+                            <input type="submit" class="boton-guardar" value="Guardar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <footer class="contenedor informacion">
+                <div class="legal">
+                    <h3>Información</h3>
+                    <h2>321 6548970</h2>
+                    <h2>Calle 21 # 50 - 42</h2>
+                    <h2>Medellín - Colombia</h2>
+                    <h2>Lunes a sábado de 9:00 a.m. a 6:00 p.m.</h2>
+                </div>
+                <div class="corporativo">
+                    <h3>Corporativo</h3>
+                    <a href="#">
+                        <h2>Quiénes somos</h2>
+                    </a>
+                </div>
+                <div class="redes">
+                    <h3>Redes sociales</h3>
+                    <a href="https://es-la.facebook.com/"><img src="imagenes/facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/"><img src="imagenes/instagram.png" alt="Instagram"></a>
+                </div>
+            </footer>
+    
+        </main>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/b4d4ac8378.js" crossorigin="anonymous"></script>
+    <!--iconos font awesome-->
+    <script src="js/menu.js"></script>
+</body>
+
+</html>

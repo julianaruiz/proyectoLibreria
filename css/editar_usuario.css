@@ -1,0 +1,52 @@
+.contenedor{
+    height: 75%;
+    background: #fff;
+}
+.contenedor-formulario{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.contenedor-formulario .cambio_usuario{
+    background: coral;
+}
+.contenedor-formulario .datos-usuario{
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.cambio_usuario .label{
+    font-size: 20px;
+    display: block;
+    padding: 10px;
+}
+.cambio_usuario .contenedor-texto{
+    padding: 20px;
+    margin-left: 20px;
+}
+.cambio_usuario .texto{
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+.btn-guardar{
+    display: block;
+    text-align: center;
+    padding: 20px;
+}
+
+.guardar{
+    background: transparent;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.guardar:hover{
+    transition: ease all .7s;
+    background: turquoise;
+}

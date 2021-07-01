@@ -1,0 +1,78 @@
+.popup{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: flex;
+    animation: modal 2s 1s forwards;
+    visibility: hidden;
+    opacity: 0;
+}
+#cerrar{
+    display: none;
+}
+.popup label{ /*label siguiente al de la id cerrar*/
+    position: absolute;
+}
+.popup img{
+    height: 100%;
+    width: 100%;
+}
+.popup a{
+    font-size: 25px;
+    display: inline-block;
+    position: absolute;
+    z-index: 200;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: 10px;
+    bottom: 40%;
+    text-decoration: none;
+    color:rgba(0, 0, 0, .7);
+    text-align: center;
+}
+.popup a:hover{
+    border: 1px solid rgba(0, 0, 0, .5);
+    padding: 7px;
+}
+.contenido{
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    background: #fff;
+    border-radius: 10px;
+}
+.popup i{
+    font-size: 25px;
+    position: absolute;
+    z-index: 100;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+@keyframes modal{
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+#cerrar:checked ~ .popup{
+    display: none;
+}
+
+@media screen and (max-width: 800px){
+    .contenido{
+        height: 40%;
+    }
+    .popup a{
+        font-size: 15px;
+        border: 1px solid rgba(0, 0, 0, .5);
+        background: rgba(118, 212, 149, 0.726);
+    }
+}
